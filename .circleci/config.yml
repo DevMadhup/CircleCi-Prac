@@ -1,0 +1,14 @@
+version: 2.1
+jobs:
+  Version:
+    docker:
+      - image: cimg/python:3.11.3
+    steps:
+      - checkout
+      - run: echo "Hello World"
+
+
+Workflows:
+  test:
+    jobs:
+      - Version

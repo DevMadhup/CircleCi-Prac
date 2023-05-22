@@ -12,7 +12,8 @@ jobs:
       - image: cimg/python:3.11.3
     steps:
       - checkout
-      - command: |
+      - run:
+        command: |
           docker --version
           
 

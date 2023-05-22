@@ -13,8 +13,8 @@ jobs:
     steps:
       - checkout
       - run:
-        command: |
-          docker --version
+          command: |
+            docker --version
           
 
 

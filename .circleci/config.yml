@@ -1,14 +1,27 @@
 version: 2.1
 jobs:
-  Version:
+  Python Version:
     docker:
       - image: cimg/python:3.11.3
     steps:
       - checkout
-      - run: python --version
+      - run: echo "Hello World"
+
+  Checking for source code:
+    docker:
+      - image: cimg/python:3.11.3
+    steps:
+      - checkout
+      - command: |
+          docker --version
+          
+
 
 
 workflows:
   test:
     jobs:
       - Version
+      - Checking for source code:
+          requires:
+            - Version
